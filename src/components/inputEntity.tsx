@@ -60,6 +60,7 @@ export default function InputEntities({
           className="form-multiselect mt-1 block w-full rounded-md border-gray-900 bg-gray-900 px-2 py-1 text-gray-200 shadow-sm focus:border-slate-900 focus:ring focus:ring-slate-900 focus:ring-opacity-50"
           type="text"
           name={name}
+          value={value}
           onChange={handleEntityChange}
           list={`${name}-options`}
           defaultValue={value}

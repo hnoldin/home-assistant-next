@@ -114,6 +114,7 @@ export default function InputEntities({
               onClick={() => handleRemoveItem(item)}
             >
               <Icon title="Remove" size={1} path={mdiCloseCircle} />
+              <span className="text-primary">{item.value}</span>
             </button>
           </div>
         ))}

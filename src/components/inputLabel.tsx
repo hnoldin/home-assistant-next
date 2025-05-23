@@ -9,7 +9,7 @@ export default function InputLabel({
   return (
     <span className="flex flex-row items-center gap-2">
       {icon}
-      <span className="block text-sm font-medium text-gray-200">{label}</span>
+      <span className="text-primary block text-sm font-medium">{label}</span>
     </span>
   );
 }

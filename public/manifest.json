@@ -1,13 +1,13 @@
 {
-  "name": "Universal Remote",
-  "short_name": "Universal Remote",
-  "description": "A remote control for your home",
+  "name": "Home Assistant Next App",
+  "short_name": "Home Assistant Next App",
+  "description": "Home Assistant Nextjs Dashboard",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#673AB7",
   "background_color": "#000000",
   "orientation": "portrait-primary",
-  "lang": "en-GB",
+  "lang": "en-US",
   "categories": [
     "entertainment",
     "home-automation",

@@ -1,4 +1,4 @@
-"use server";
+"use client";
 import {
   mdiCogOutline,
   mdiLightSwitch,
@@ -10,6 +10,11 @@ import Icon from "@mdi/react";
 
 import { type ListItem, ListItemType } from "@/types/list";
 import List from "@/components/list";
+import LightCard from "@/components/lightCard/lightCard";
+import LightCard2 from "@/components/lightCard/lightCard copy";
+import { useHomeAssistant } from "@/providers/homeAssistant";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const items: Array<ListItem> = [
   {
@@ -49,10 +54,18 @@ const items: Array<ListItem> = [
   },
 ];
 
-export default async function Home() {
+export default function Home() {
+  const homeAssistant = useHomeAssistant();
+  const entities = homeAssistant.entities;
+
   return (
     <>
       <List items={items} />
+      <LightCard />
+     
+      <Button variant={"default"} asChild>
+        <Link href="/home2"> New Home</Link>
+      </Button>
     </>
   );
 }

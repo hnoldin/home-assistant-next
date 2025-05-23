@@ -2,10 +2,11 @@
 import Link from "next/link";
 
 import { type ListItem, ListItemType } from "@/types/list";
+import { Card } from "./ui/card";
 
 export default function List({ items }: { items: Array<ListItem> }) {
   return (
-    <section className="flex min-w-full flex-col items-center justify-center">
+    <section className=" text-primary flex min-w-full flex-col items-center justify-center">
       <ul className="selectable-list flex min-w-full flex-col gap-3 px-2">
         {items.map(
           ({
@@ -13,34 +14,24 @@ export default function List({ items }: { items: Array<ListItem> }) {
             type,
             name,
             url,
+            value,
             icon,
             iconColor,
             selected,
             onClick,
           }: ListItem) => {
-            const isClassName =
-              typeof iconColor === "string" && iconColor.startsWith("text-");
             return url ? (
-              <Link
-                key={key}
-                href={url}
-                className="flex flex-row items-center gap-3"
-                replace={type === ListItemType.Source}
-              >
-                <span
-                  className={
-                    selected
-                      ? "text-purple-400"
-                      : isClassName
-                      ? iconColor
-                      : undefined
-                  }
-                  style={{ color: !isClassName ? iconColor : undefined }}
+              <Card className="bg-background p-4">
+                <Link
+                  key={key}
+                  href={url}
+                  className="flex flex-row items-center gap-3"
+                  replace={type === ListItemType.Source}
                 >
-                  {icon}
-                </span>
-                <span>{name}</span>
-              </Link>
+                  <span className="text-primary">{icon}</span>
+                  <span className="text-primary">{name}</span>
+                </Link>
+              </Card>
             ) : (
               <a
                 key={key}
@@ -49,19 +40,11 @@ export default function List({ items }: { items: Array<ListItem> }) {
                 } flex-row items-center gap-3`}
                 onClick={onClick}
               >
-                <span
-                  className={
-                    selected
-                      ? "text-purple-400"
-                      : isClassName
-                      ? iconColor
-                      : undefined
-                  }
-                  style={{ color: !isClassName ? iconColor : undefined }}
-                >
-                  {icon}
-                </span>
-                <span>{name}</span>
+                <Card className="bg-background flex flex-row items-center gap-4 p-4 transition-colors duration-300 ease-out hover:border-neutral-400 hover:bg-neutral-100">
+                  <span className="text-red-500">{icon}</span>
+                  <span className="text-primary">{name}</span>
+                  <span className="text-primary">{value}</span>
+                </Card>
               </a>
             );
           },

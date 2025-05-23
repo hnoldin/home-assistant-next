@@ -9,6 +9,7 @@ export interface ListItem {
   type: ListItemType;
   name: string;
   url?: string;
+  value?: string;
   icon: JSX.Element;
   iconColor?: string;
   selected?: boolean;

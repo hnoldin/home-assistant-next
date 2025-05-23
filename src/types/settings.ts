@@ -29,6 +29,7 @@ export interface SwitchSettings {
 
 export interface EntitySetting {
   entity: string;
+  value?: string;
 }
 
 export enum TVType {

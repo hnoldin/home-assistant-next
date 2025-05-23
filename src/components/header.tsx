@@ -38,7 +38,7 @@ export default function Header() {
     <header className="align-center flex w-full flex-row justify-start gap-2">
       {pathname !== "/" && (
         <button
-          className="rounded-md border border-transparent text-sm font-medium text-white shadow-sm focus:outline-none"
+          className="text-primary rounded-md border border-transparent text-sm font-medium shadow-sm focus:outline-none"
           onClick={() => {
             router.back();
           }}
