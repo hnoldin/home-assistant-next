@@ -12,7 +12,7 @@ type LightCard2Props = {
   showSlider: boolean;
 };
 
-const lightCard2 = ({
+const LightCard2 = ({
   entity_id,
   name,
   icon,
@@ -45,7 +45,7 @@ const lightCard2 = ({
         <div className="flex flex-col items-start justify-between">
           <h2>{name ?? entities?.[entity_id]?.attributes?.friendly_name}</h2>
           {showState && (
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               {entities?.[entity_id]?.state === "on" ? "On" : "Off"}
             </p>
           )}
@@ -55,7 +55,7 @@ const lightCard2 = ({
         <Slider
           className="mt-2 w-full"
           min={0}
-          max={100}
+          max={255}
           step={1}
           value={[entities?.[entity_id]?.attributes?.brightness]}
           onValueChange={(value) => {
@@ -75,4 +75,4 @@ const lightCard2 = ({
   );
 };
 
-export default lightCard2;
+export default LightCard2;

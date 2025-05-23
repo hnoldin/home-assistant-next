@@ -7,7 +7,7 @@ import LightCard2 from "@/components/lightCard/lightCard copy";
 import { LightbulbIcon } from "lucide-react";
 import TitleCard from "@/components/TitleCard/Component";
 
-const home2 = () => {
+const Home2 = () => {
   const homeAssistant = useHomeAssistant();
   const entities = homeAssistant.entities;
   return (
@@ -31,4 +31,4 @@ const home2 = () => {
   );
 };
 
-export default home2;
+export default Home2;
